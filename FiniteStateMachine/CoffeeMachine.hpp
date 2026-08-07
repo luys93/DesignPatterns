@@ -20,13 +20,14 @@ class CoffeeMachine
             CoffeeMachine& operator=(const CoffeeMachine& other) = delete;
             CoffeeMachine& operator=(CoffeeMachine&&) noexcept = default;
             void setCurrentBalance(float money);
-            void setSelectDrink(const std::string& drinkName);
+            void setSelectDrink(std::string drinkName);
             void setStatus(std::unique_ptr<IState> status);
             const std::string& getSelectedDrink() const;
             float getCurrentBalance() const;
+            const std::map<std::string, float>& getAvailableDrinks() const;
             const std::string& getStatus() const;
             friend std::ostream& operator<<(std::ostream& os, const CoffeeMachine& c);
-            std::string prepareDrink();
+            void prepareDrink();
             void buyDrinks(const std::string& drinkName, float money);
             void undo();
             void repair();

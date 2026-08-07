@@ -1,22 +1,22 @@
 #pragma once
 
 #include "IState.hpp"
-#include "CoffeeMachine.hpp"
 
+class CoffeeMachine;
 class PendingState;
 
-class MaintenanceState : public IState
+class EmanationState : public IState
 {
     private:
-            std::string state_{"Maintenance"};
-  
+            std::string status{"Emanation"};
+    
     public:
-            MaintenanceState() = default;
-            ~MaintenanceState() = default;
-            MaintenanceState(const MaintenanceState& other) = delete;
-            MaintenanceState(MaintenanceState&&) noexcept = default;
-            MaintenanceState& operator=(const MaintenanceState& other) = delete;
-            MaintenanceState& operator=(MaintenanceState&&) noexcept = default;
+            EmanationState() = default;
+            ~EmanationState() = default;
+            EmanationState(const EmanationState& other) = delete;
+            EmanationState(EmanationState&&) noexcept = default;
+            EmanationState& operator=(const EmanationState& other) = delete;
+            EmanationState& operator=(EmanationState&&) noexcept = default;
             void repair(CoffeeMachine& machine) override;
             void undo(CoffeeMachine& machine) override;
             void insertMoney(CoffeeMachine& machine, float money) override;

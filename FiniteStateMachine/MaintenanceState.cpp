@@ -31,3 +31,9 @@ const std::string& MaintenanceState::getStatus() const
 {
     return state_;
 }
+
+std::string MaintenanceState::prepareDrink(CoffeeMachine& machine)
+{
+    static_cast<void>(machine);
+    throw std::runtime_error("Operation not allowed: machine is in maintenance state");
+}

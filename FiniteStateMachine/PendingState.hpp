@@ -4,6 +4,8 @@
 #include "IState.hpp"
 #include "CoffeeMachine.hpp"
 
+class EmanationState;
+
 class PendingState: public IState
 {
     private:
@@ -20,4 +22,5 @@ class PendingState: public IState
             void insertMoney(CoffeeMachine& machine, float money) override;
             void selectDrink(CoffeeMachine& machine, const std::string& drinkName) override;
             const std::string& getStatus() const override;
+            std::string prepareDrink(CoffeeMachine& machine) override;
 };
