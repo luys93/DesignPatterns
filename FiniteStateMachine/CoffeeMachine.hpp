@@ -10,7 +10,7 @@ class CoffeeMachine
     private:
             float currentBalance_{0};
             std::string selectedDrink_{""};
-            std::map<std::string, float> availableDrinks_{{"coffee", 1.5f}, {"tea", 1.f}, {"coca cola", 2}};
+            std::map<std::string, float> availableDrinks_{{"coffee", 1.5f}, {"tea", 1.0f}, {"coca cola", 2.0f}};
             std::unique_ptr<IState> status_;
     public:
             CoffeeMachine(std::unique_ptr<IState> status);

@@ -48,15 +48,7 @@ std::ostream& operator<<(std::ostream& os, const CoffeeMachine& c)
 
 void CoffeeMachine::prepareDrink()
 {
-    /*for(auto& drink : availableDrinks_)
-    {
-        if(drink.first == selectedDrink_ && currentBalance_ >= drink.second)
-            return selectedDrink_;
-        else if(drink.first == selectedDrink_ && currentBalance_ < drink.second)
-            throw std::runtime_error("Insufficient balance for this drink");
-    }
-    throw std::runtime_error("Do not found this drink");
-    return("");*/
+
     status_->prepareDrink(*this);
     std::cout << "Dispensing " << selectedDrink_ << " ..." <<std::endl;
 }
@@ -65,7 +57,6 @@ void CoffeeMachine::buyDrinks(const std::string& drinkName, float money)
 {
     status_ ->insertMoney(*this, money);
     status_ ->selectDrink(*this, drinkName);
-    //this->prepareDrink();
 }
 
 void CoffeeMachine::undo()

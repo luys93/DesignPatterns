@@ -35,7 +35,7 @@ int main()
             else if(input == "Buy")
             {
                 std::string name;
-                std::cout << "choose drink: ";
+                std::cout << "choose drink{coffee - 1.5; tea - 1; coca cola 2}: ";
                 std::getline(std::cin, name);
                 std::cout << "insert money: ";
                 std::getline(std::cin, money);
@@ -55,7 +55,7 @@ int main()
                 }
             }
             else
-                std::cout << "Invalid command: Only input valid is: <Buy> and <Error>" << std::endl;
+                std::cout << "Invalid command: Only input valid is: <Buy>, <Error> or <Exit>" << std::endl;
 
         }
         catch(std::exception& e)
