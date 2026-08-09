@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <vector>
+#include <memory>
+#include "ICommand.hpp"
 
 class Invoker
 {
@@ -14,5 +16,8 @@ class Invoker
             Invoker(Invoker&&) noexcept = default;
             Invoker& operator=(const Invoker& other) = delete;
             Invoker& operator=(Invoker&&) noexcept = default;
+            void addCommand(std::unique_ptr<ICommand> command);
+            void undoCommand();
+            void executeCommand();
 
 };
