@@ -8,7 +8,13 @@ class IState
 {
 
     public:
+
             virtual ~IState() = default;
+            IState() = default;
+            IState(const IState& other) = delete;
+            IState(IState&&) noexcept = default;
+            IState& operator=(const IState& other) = delete;
+            IState& operator=(IState&&) = default;
             virtual void insertMoney(CoffeeMachine& machine, float money) = 0;
             virtual void selectDrink(CoffeeMachine& machine, const std::string& drinkName) = 0;
             virtual void undo(CoffeeMachine& machine) = 0;

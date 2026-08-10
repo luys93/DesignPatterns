@@ -13,12 +13,7 @@ class CoffeeMachine
             std::map<std::string, float> availableDrinks_{{"coffee", 1.5f}, {"tea", 1.0f}, {"coca cola", 2.0f}};
             std::unique_ptr<IState> status_;
     public:
-            CoffeeMachine(std::unique_ptr<IState> status);
-            ~CoffeeMachine() = default;
-            CoffeeMachine(const CoffeeMachine& other) = delete;
-            CoffeeMachine(CoffeeMachine&&) noexcept = default;
-            CoffeeMachine& operator=(const CoffeeMachine& other) = delete;
-            CoffeeMachine& operator=(CoffeeMachine&&) noexcept = default;
+            explicit CoffeeMachine(std::unique_ptr<IState> status);
             void setCurrentBalance(float money);
             void setSelectDrink(std::string drinkName);
             void setStatus(std::unique_ptr<IState> status);
