@@ -8,7 +8,6 @@ class Melee : public InterfaceAttack
             std::string str{"Sword"};
     public:
             Melee() = default;
-            ~Melee() = default;
             void chooseAttack() override
             {
                 std::cout << "The Enemy attack with " << str;

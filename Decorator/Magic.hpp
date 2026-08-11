@@ -9,7 +9,6 @@ class Magic : public InterfaceAttack
             std::string str{"Dark"};
     public:
             Magic() = default;
-            ~Magic() = default;
             void chooseAttack() override
             {
                 std::cout << "The Enemy attack with " << str << " Magic";

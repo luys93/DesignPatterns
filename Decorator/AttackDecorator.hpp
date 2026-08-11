@@ -10,12 +10,6 @@ class AttackDecorator: public InterfaceAttack
             std::unique_ptr<InterfaceAttack> wrapperAttack;
 
     public:
-            AttackDecorator(std::unique_ptr<InterfaceAttack> wrapper);
-            AttackDecorator() = delete;
-            ~AttackDecorator() = default;
-            AttackDecorator(const AttackDecorator& other) = delete;
-            AttackDecorator(AttackDecorator&&) = default;
-            AttackDecorator& operator=(const AttackDecorator& other) = delete;
-            AttackDecorator& operator=(AttackDecorator&&) = default;
+            explicit AttackDecorator(std::unique_ptr<InterfaceAttack> wrapper);
             void chooseAttack() override;
 };
