@@ -4,15 +4,13 @@
 int main()
 {
     Subject sub;
-    Enemy enemy("Bad man");
-   
-
+    auto enemy = std::make_shared<Enemy>("Bad man");
  
 
-    sub.addObserver(&enemy);
+    sub.addObserver(enemy);
     sub.printForTest();
     sub.notify("death");
-    sub.removeObserver(&enemy);
+    sub.removeObserver(enemy);
     sub.printForTest();
 
 }

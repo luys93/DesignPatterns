@@ -9,16 +9,12 @@
 class Subject
 {
     private:
-            std::vector<Observer*> observerVec;  
+            //std::vector<Observer*> observerVec;
+            std::vector<std::weak_ptr<Observer> > observerVec;  
     public:
             Subject() = default;
-            ~Subject() = default;
-            Subject(const Subject& other) = delete;
-            Subject& operator=(const Subject& other) = delete;
-            Subject(Subject&&) noexcept = default;
-            Subject& operator=(Subject&&) noexcept = default;
-            void addObserver(Observer* ob);
-            void removeObserver(Observer* ob);
+            void addObserver(std::weak_ptr<Observer> ob);
+            void removeObserver(std::weak_ptr<Observer> ob);
             void notify(const std::string& str);
             void printForTest();
 };

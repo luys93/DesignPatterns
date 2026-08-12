@@ -8,12 +8,7 @@ class Enemy : public Observer
     private:
             std::string name{""};
     public:
-            Enemy(const std::string& name): name(name) {};
-            ~Enemy() = default;
-            Enemy(const Enemy& other) = delete;
-            Enemy& operator=(const Enemy& other) = delete;
-            Enemy(Enemy&&) noexcept = default;
-            Enemy& operator=(Enemy&&) noexcept = default;
+            explicit Enemy(const std::string& name): name(name) {};
             const std::string& getName() const
             {
                 return name;
