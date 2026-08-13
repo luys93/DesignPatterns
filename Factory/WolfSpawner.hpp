@@ -9,7 +9,6 @@ class WolfSpawner : public InterfaceSpawner
     private:
             std::string type{""};
     public:
-            WolfSpawner(const std::string& type) : type(type) {};
-            ~WolfSpawner() = default;
+            explicit WolfSpawner(const std::string& type) : type(type) {};
             std::unique_ptr<InterfaceEnemy> createEnemy() {return std::make_unique<Wolf>(type);};
 };

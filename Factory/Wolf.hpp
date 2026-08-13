@@ -9,7 +9,6 @@ class Wolf : public InterfaceEnemy
             std::string type{""};
 
     public:
-            Wolf(const std::string& type) : type(type) {};
-            ~Wolf() = default;
+            explicit Wolf(const std::string& type) : type(type) {};
             void tryAttack() override {std::cout << type << " bite attack" << std::endl;}
 };
