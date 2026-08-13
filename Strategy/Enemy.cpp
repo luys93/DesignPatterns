@@ -1,24 +1,16 @@
 #include "Enemy.hpp"
 
 
-
-Enemy::Enemy()
+Enemy::Enemy(std::unique_ptr<InterfaceAttack> type) : attack_{std::move(type)}
 {
 
-}
-
-
-
-void Enemy::setAttack(std::unique_ptr<InterfaceAttack> type)
-{
-    attack = std::move(type);
 }
 
 
 void Enemy::tryAttack()
 {
-    if(!attack)
+    if(!attack_)
         std::cout << "Any attack has been implemented" << std::endl;
     else
-        attack->chooseAttack();
+        attack_->chooseAttack();
 }

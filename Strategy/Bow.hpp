@@ -5,12 +5,10 @@
 class Bow : public InterfaceAttack
 {
     private:
-        std::string str{"Bow"};
+        std::string str_{"Bow"};
     public:
-        Bow() = default;
-        virtual ~Bow() = default;
         void chooseAttack() override
         {
-            std::cout << "The enemy attack with " << str << std::endl;
+            std::cout << "The enemy attack with " << str_ << std::endl;
         };
 };

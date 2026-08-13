@@ -7,12 +7,8 @@
 class Enemy 
 {
     private:
-            std::unique_ptr<InterfaceAttack> attack = nullptr;
+            std::unique_ptr<InterfaceAttack> attack_;
     public:
-        Enemy();
-        ~Enemy() = default;
-        Enemy(Enemy&&) noexcept = default;
-        Enemy& operator=(Enemy&&) noexcept = default;
-        void setAttack(std::unique_ptr<InterfaceAttack> type);
-        void tryAttack() ;
+        explicit Enemy(std::unique_ptr<InterfaceAttack> attack);    
+        void tryAttack();
 };
